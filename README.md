@@ -5,16 +5,17 @@ A ready-to-run [Selenium Boot](https://seleniumboot.com) project: Maven **or** G
 ## Run it
 
 ```bash
-mvn test        # Maven  → report: target/selenium-boot-report.html
-./gradlew test  # Gradle → report: build/selenium-boot-report/selenium-boot-report.html
+./mvnw test       # Maven  → report: target/selenium-boot-report.html
+./gradlew test    # Gradle → report: build/selenium-boot-report/selenium-boot-report.html
 ```
 
-Needs Java 17+ and Chrome (or Firefox); Maven 3.8+ for the Maven route. No driver setup — Selenium Manager handles it. Pick one build tool and delete the other's files (`pom.xml`, or `build.gradle` / `settings.gradle` / `gradlew*` / `gradle/`).
+Needs Java 17+ and Chrome (or Firefox). No driver setup — Selenium Manager handles it. Pick one build tool and delete the other's files (`pom.xml` / `mvnw` / `mvnw.cmd` / `.mvn/`, or `build.gradle` / `settings.gradle` / `gradlew*` / `gradle/`).
 
 ## What's here
 
 ```
 ├── pom.xml                       # Maven: one dependency, selenium-boot
+├── mvnw, mvnw.cmd, .mvn/         # Maven wrapper (mvnw)
 ├── build.gradle, settings.gradle # Gradle: same, with the wrapper (gradlew)
 ├── selenium-boot.yml             # browser, baseUrl, retry, timeouts — all optional
 ├── testng.xml                    # suite: runs everything in com.example.tests
@@ -29,7 +30,7 @@ Needs Java 17+ and Chrome (or Firefox); Maven 3.8+ for the Maven route. No drive
 2. Replace `ExamplePage` and `SmokeTest` with your own pages and tests.
 3. Rename the `com.example` package and the group id in your build file.
 
-Try `mvn test -Dbrowser=firefox` (or `./gradlew test -Dbrowser=firefox`), or set `headless: false` to watch it run.
+Try `./mvnw test -Dbrowser=firefox` (or `./gradlew test -Dbrowser=firefox`), or set `headless: false` to watch it run.
 
 ## Learn more
 
